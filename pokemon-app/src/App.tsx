@@ -1,14 +1,22 @@
-import { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { PokemonDetail } from './models/pokemon.model'
-import { getPokemonList } from './service/api-service'
 import HomePage from './pages/HomePage'
 import DetailPage from './pages/DetailPage'
+
 
 function App() {
   
  return(
-  <><HomePage></HomePage><DetailPage></DetailPage></>
+    <>
+    <BrowserRouter>
+    <Routes>
+       <Route path='/' Component={HomePage}/>
+        <Route path='/:name' Component={DetailPage}/>
+    </Routes>
+
+    </BrowserRouter>
+   
+    </>
  )
 }
 
